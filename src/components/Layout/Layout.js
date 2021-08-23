@@ -73,7 +73,7 @@ const Layout = ({ children, title = "Nation Ranks" }) => {
 
       <main className={styles.main}>{children}</main>
 
-      <footer className={styles.footer}>Thu Nghiem @ devchallenges.io</footer>
+      <footer className={styles.footer}><a href="https://github.com/xerexcoded">Arnav Chan</a></footer>
     </div>
   );
 };

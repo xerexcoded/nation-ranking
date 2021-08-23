@@ -122,9 +122,9 @@ export const getStaticPaths = async () => {
   const res = await fetch("https://restcountries.eu/rest/v2/all");
   const countries = await res.json();
 
-  const paths = countries.map((country,index) => ({
-   params: {  id: country.alpha3Code },
-   key : {index}
+  const paths = countries.map((country,) => ({
+   params: {  id: country.alpha3Code }
+   
   }));
   
   return {
@@ -133,12 +133,13 @@ export const getStaticPaths = async () => {
   };
 };
 
-export const getStaticProps = async ({ params }) => {
-  const country = await getCountry(params.id);
+export const getStaticProps = async ({ params:{id} }) => {
+  const country = await getCountry(id);
 
   return {
     props: {
       country,
+      id
     },
   };
 };
